@@ -1,0 +1,39 @@
+@use '../sass/abstracts' as *;
+
+.deletion-msg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+  .msg-box {
+    max-width: rem(480);
+    padding: rem(48);
+    h1 {
+      margin-bottom: rem(12);
+      color: var(--font-1);
+    }
+    p {
+      margin-bottom: rem(14);
+      color: var(--font-2);
+    }
+    .btn-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      gap: rem(10);
+    }
+  }
+}

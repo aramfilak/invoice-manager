@@ -1,0 +1,14 @@
+@use '../sass/abstracts' as *;
+
+.back-home-btn {
+  font-weight: 700;
+  font-size: rem(15);
+  line-height: rem(15);
+  letter-spacing: -0.25px;
+  color: var(--font-1);
+  display: flex;
+
+  .btn-name {
+    padding-left: rem(10);
+  }
+}

@@ -1,0 +1,79 @@
+@use '../sass/abstracts' as *;
+
+.invoice-info-bar {
+  min-width: 100%;
+  line-height: 1.2;
+  color: var(--font-1);
+  position: relative;
+  min-height: rem(134);
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px var(--ac-1);
+    scale: (1.04);
+  }
+  .id {
+    font-weight: 700;
+    span {
+      color: var(--font-2);
+    }
+  }
+
+  .client,
+  .total,
+  .status {
+    position: absolute;
+  }
+
+  .client,
+  .created-date {
+    font-weight: 500;
+    color: var(--font-2);
+  }
+
+  .client {
+    right: rem(25);
+    top: rem(25);
+  }
+  .created-date {
+    transform: translateY(50%);
+  }
+  .total {
+    font-weight: 700;
+    left: rem(25);
+    bottom: rem(25);
+  }
+
+  .status {
+    right: rem(25);
+    bottom: rem(25);
+  }
+
+  svg {
+    display: none;
+  }
+
+  @include mq(md) {
+    padding: rem(30);
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1.5fr 1fr auto;
+    align-items: center;
+    min-height: 100%;
+    gap: rem(14);
+
+    .client,
+    .total,
+    .status {
+      position: static;
+    }
+
+    .created-date {
+      transform: translateY(0%);
+    }
+
+    svg {
+      display: block;
+    }
+  }
+}

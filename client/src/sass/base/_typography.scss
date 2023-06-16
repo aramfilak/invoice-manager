@@ -1,0 +1,40 @@
+@use '../abstracts' as *;
+
+body {
+  font-family: 'League Spartan', sans-serif;
+}
+
+input[type='checkbox'] {
+  appearance: none;
+  width: rem(16);
+  height: rem(16);
+  background-color: var(--check-box);
+
+  transform: translateY(4px);
+  position: relative;
+  border-radius: rem(2);
+
+  &:before {
+    content: '';
+    background-color: var(--ac-1);
+    background-image: url('./assets/icon-check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale(0);
+    transition: all 0.2s;
+    border-radius: rem(2);
+  }
+
+  &:hover {
+    border: 2px solid var(--ac-2);
+  }
+}
+
+input[type='checkbox']:checked::before {
+  transform: scale(1);
+}

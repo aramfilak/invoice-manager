@@ -1,0 +1,144 @@
+@use '../sass/abstracts' as *;
+
+.main-navbar {
+  width: 100%;
+  background-color: var(--dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: rem(72);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+
+  .app-logo {
+    background-color: var(--ac-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 rem(20) rem(20) 0;
+    height: 100%;
+    width: rem(72);
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      background-color: var(--ac-2);
+      height: 50%;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      border-radius: rem(20) 0 0 0;
+    }
+
+    img {
+      z-index: 1;
+    }
+  }
+
+  .actions {
+    display: flex;
+
+    .action {
+      width: rem(72);
+      height: rem(72);
+    }
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      &::after,
+      &::before {
+        position: absolute;
+        display: flex;
+        opacity: 0;
+        z-index: -1;
+        transition: all 0.2s;
+      }
+      &::after {
+        content: '';
+        border-width: rem(10);
+        border-style: solid;
+        border-color: transparent transparent #fff transparent;
+        top: rem(62);
+        right: rem(25);
+      }
+
+      &::before {
+        border-radius: rem(5);
+        content: 'Login';
+        width: rem(100);
+        height: rem(40);
+        background-color: #fff;
+        top: rem(80);
+        right: rem(15);
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.09);
+      }
+      &:hover {
+        opacity: 1;
+      }
+      &:hover::before,
+      &:hover::after {
+        opacity: 1;
+        z-index: 1;
+      }
+      svg {
+        width: rem(40);
+      }
+    }
+
+    .theme-switcher:hover > svg > path {
+      fill: #dfe3fa;
+      transition: all 0.3s ease;
+    }
+  }
+
+  @include mq(xl) {
+    height: 100%;
+    width: rem(100);
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-radius: 0 rem(20) rem(20) 0;
+    .app-logo {
+      height: rem(80);
+      width: 100%;
+      border-radius: 0 rem(20) rem(20) 0;
+
+      &:before {
+        border-radius: rem(20) 0 rem(20);
+      }
+    }
+    .actions {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      .action {
+        width: rem(80);
+        height: rem(80);
+      }
+
+      .user-profile {
+        &::after {
+          border-color: transparent #fff transparent transparent;
+          top: rem(30);
+          right: rem(0);
+        }
+
+        &::before {
+          top: rem(20);
+          right: rem(-96);
+        }
+      }
+    }
+  }
+}

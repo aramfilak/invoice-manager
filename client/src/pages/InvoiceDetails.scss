@@ -1,0 +1,105 @@
+@use '../sass/abstracts' as *;
+
+.invoice {
+  padding-top: rem(80);
+  padding-bottom: rem(160);
+  transition: all 0.3s;
+  .container {
+    .info-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: rem(16);
+      gap: rem(20);
+      .tools {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: var(--el-bg);
+        padding: rem(24);
+        display: flex;
+        justify-content: center;
+        gap: rem(8);
+
+        @include mq(md) {
+          justify-content: end;
+          flex: 1;
+          position: static;
+          padding: 0;
+          width: fit-content;
+        }
+      }
+    }
+
+    .invoice-details {
+      .mb {
+        margin-bottom: rem(13);
+      }
+      .st {
+        font-weight: 700;
+        font-size: rem(15);
+        line-height: rem(24);
+        color: var(--font-1);
+        letter-spacing: rem(-0.25);
+      }
+      .nr {
+        font-weight: 500;
+        font-size: rem(15);
+        line-height: rem(15);
+        color: var(--font-2);
+      }
+      .head {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: rem(24);
+      }
+      .body {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: rem(50);
+        @include mq(md) {
+          padding-right: rem(130);
+        }
+
+        .dates {
+          display: flex;
+          flex-direction: column;
+          gap: rem(30);
+        }
+      }
+      .items {
+        margin-top: rem(38);
+        background-color: var(--bg);
+        padding: rem(24);
+        border-radius: rem(8) rem(8) 0 0;
+        .item {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: rem(24);
+        }
+      }
+
+      .amount {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #373b53;
+        color: #fff;
+        padding: rem(24);
+        border-radius: 0 0 rem(8) rem(8);
+        .total {
+          font-style: normal;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: rem(32);
+          text-align: right;
+          letter-spacing: -0.5px;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}

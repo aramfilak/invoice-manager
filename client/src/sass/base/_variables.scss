@@ -1,0 +1,32 @@
+body {
+  --ac-1: #7c5dfa;
+  --ac-2: #9277ff;
+  --dark-blue: #252945;
+  --purple: #7e88c3;
+  --red: #ec5757;
+  --sec: #fff;
+  --bg: #f8f8fb;
+  --font-1: #0c0e16;
+  --font-2: #888eb0;
+  --check-box: #dfe3fa;
+  --el-bg: #fff;
+  --st-paid: #33d69f;
+  --st-paid-bg: rgba(51, 214, 160, 0.08);
+  --st-draft: #373b53;
+  --st-draft-bg: rgb(55, 59, 83, 0.08);
+  --st-pending: #ff8f00;
+  --st-pending-bg: rgba(255, 145, 1, 0.08);
+}
+body.dark-mode {
+  --bg: #141625;
+  --sec: #1e2139;
+  --font-1: #fff;
+  --font-2: #dfe3fa;
+  --check-box: #1e2139;
+  --el-bg: #252945;
+  --st-draft: #dfe3fa;
+  --st-draft-bg: rgb(224, 228, 250, 0.08);
+  ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+}

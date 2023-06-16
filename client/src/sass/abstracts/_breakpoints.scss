@@ -1,0 +1,9 @@
+$breakpoints: (xs: 24em, sm: 36em, md: 48em, lg: 62em, xl: 75em, xxl: 87.5em);
+
+@mixin mq($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+}
