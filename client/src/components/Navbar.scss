@@ -72,6 +72,7 @@
       &::before {
         border-radius: rem(5);
         content: 'Login';
+        color: var(--dark-blue);
         width: rem(100);
         height: rem(40);
         background-color: #fff;
@@ -80,6 +81,7 @@
         justify-content: center;
         align-items: center;
         box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.09);
+        border-bottom: 1px solid var(--dark-blue);
       }
       &:hover {
         opacity: 1;

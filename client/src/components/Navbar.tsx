@@ -11,6 +11,9 @@ const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const { darkMode, setDarkMode } = useDarkMode();
 
+  const handleAuthentication = () => {
+    console.log('');
+  };
   return (
     <>
       <ToastContainer position="bottom-right" autoClose={5000} theme={'dark'} transition={Zoom} />
@@ -26,7 +29,7 @@ const Navbar: React.FC = () => {
           >
             {darkMode ? <Sun /> : <Moon />}
           </button>
-          <button className="action user-profile">
+          <button onClick={handleAuthentication} className="action user-profile">
             <Google />
           </button>
         </div>
