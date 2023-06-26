@@ -4,6 +4,9 @@ import data from '../data/data-demo.json';
 
 interface State {
   invoices: Invoice[];
+}
+
+interface Actions {
   addInvoice: (invoice: Invoice) => void;
   updateInvoice: (invoice: Invoice) => void;
   deleteInvoice: (id: string) => void;
@@ -11,7 +14,7 @@ interface State {
   filterByStatus: (status: string) => void;
 }
 
-const useInvoice = create<State>((set) => ({
+const useInvoice = create<State & Actions>((set) => ({
   invoices: data,
 
   addInvoice: (invoice: Invoice) =>
@@ -51,7 +54,7 @@ const useInvoice = create<State>((set) => ({
   markInvoiceAsPaid: (id: string) =>
     set((state) => ({
       invoices: state.invoices.map((invoice) =>
-        invoice.id === id ? { ...invoice, status: 'paid' } : invoice
+        invoice.id === id ? { ...invoice, status: 'paid' } : invoice,
       ),
     })),
 }));

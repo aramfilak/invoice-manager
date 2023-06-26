@@ -5,6 +5,9 @@ interface State {
   invoiceFormValue: Invoice;
   openInvoiceForm: boolean;
   editInvoice: boolean;
+}
+
+interface Actions {
   updateInvoiceFormValue: (invoice: Invoice) => void;
   toggleInvoiceForm: () => void;
   resetInvoiceForm: () => void;
@@ -36,7 +39,7 @@ const invoiceFormInitialValue: Invoice = {
   total: 0,
 };
 
-const useInvoiceForm = create<State>((set) => ({
+const useInvoiceForm = create<State & Actions>((set) => ({
   editInvoice: false,
   openInvoiceForm: false,
   invoiceFormValue: invoiceFormInitialValue,
